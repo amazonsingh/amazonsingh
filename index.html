@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Worker Iframe Caching</title>
+</head>
+<body>
+    <ol></ol>
+    <iframe src="" frameborder="0" allow="fullscreen"></iframe>
+</body>
+<script>
+    const games = [
+        {
+            name: 'Mario',
+            url: 'https://h5store688.github.io/g9/super-mario-bros/' 
+        }
+    ];
+
+    const ol = document.querySelector('ol')
+    const iframe = document.querySelector('iframe')
+
+    function createLi(detail) {
+        const h1 = document.createElement('h1')
+        const li = document.createElement('li')
+        li.textContent = detail.name;
+        li.addEventListener('click', function() {
+            iframe.src = detail.url;
+            iframe.style.height = '100vh';
+            iframe.style.width = '100vw';
+            iframe.style.position = 'absolute';
+            iframe.style.top = '0';
+            iframe.requestFullscreen();
+        });
+        h1.appendChild(li);
+        ol.appendChild(h1);
+    }
+
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            games.forEach(createLi);
+            }, function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+    }
+
+</script>
+</html>
