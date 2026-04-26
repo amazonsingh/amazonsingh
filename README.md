@@ -1,16 +1,29 @@
-## Hi there 👋
+# Hello World 👋
 
-<!--
-**amazonsingh/amazonsingh** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Welcome to this project! This is a simple web application demonstrating service worker caching with iframe navigation.
 
-Here are some ideas to get you started:
+## About
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+This project showcases a single-page application that uses service workers to cache and manage iframe-based content loading. Users can browse through a list of games and load them into a fullscreen iframe experience.
+
+## Features
+
+- 🚀 Service Worker caching for improved performance
+- 📱 Fullscreen iframe navigation
+- ⚡ Offline-first design approach
+- 🔒 Secure content loading
+
+## Getting Started
+
+Open `index.html` in a modern web browser to get started. The application uses service workers, so it requires a secure context (HTTPS) or localhost for full functionality.
+
+## Technology Stack
+
+- HTML5
+- Vanilla JavaScript
+- Service Workers
+- Cache API
+
+## License
+
+MIT
