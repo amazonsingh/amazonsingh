@@ -1,28 +1,39 @@
-# Hello World 👋
+# Service Worker Iframe Caching Demo
 
-Welcome to this project! This is a simple web application demonstrating service worker caching with iframe navigation.
-
-## About
-
-This project showcases a single-page application that uses service workers to cache and manage iframe-based content loading. Users can browse through a list of games and load them into a fullscreen iframe experience.
+This demo shows how to use a Service Worker to cache iframe content for offline viewing.
 
 ## Features
 
-- 🚀 Service Worker caching for improved performance
-- 📱 Fullscreen iframe navigation
-- ⚡ Offline-first design approach
-- 🔒 Secure content loading
+- Cache iframe sources via Service Worker
+- Click to load different games in fullscreen iframe
+- Offline caching for cached resources
 
-## Getting Started
+## How It Works
 
-Open `index.html` in a modern web browser to get started. The application uses service workers, so it requires a secure context (HTTPS) or localhost for full functionality.
+1. The page registers a Service Worker (`sw.js`)
+2. When a game is clicked, the iframe src is set to the game URL
+3. The Service Worker intercepts navigation requests and caches the responses
+4. On subsequent visits, cached content is served from the Service Worker cache
 
-## Technology Stack
+## Games Currently Included
 
-- HTML5
-- Vanilla JavaScript
-- Service Workers
-- Cache API
+- Super Mario Bros (via iframe)
+- XYZ (placeholder)
+
+## Deployment
+
+This project is configured for deployment on Vercel.
+
+## Service Worker Details
+
+The Service Worker caches:
+- Iframe navigation requests (via the fetch handler)
+- Uses a cache-first strategy for navigation requests
+- Falls back to network for non-navigation requests
+
+## Development
+
+This is a static site - no build step required.
 
 ## License
 
